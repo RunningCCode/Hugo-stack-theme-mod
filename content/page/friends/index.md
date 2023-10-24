@@ -8,8 +8,8 @@ comments: false
 license: false
 menu: 
     main:
-        name: 链接
-        weight: -90
+        name: 友链
+        weight: -50
         params:
             icon: link
         
@@ -24,38 +24,28 @@ menu:
 
 </style>
 
+你好，这里是青葱与志的博客！
 
+刚起步的小博客，欢迎交换友链！
 
-
-
-
- 这个标题默认隐藏了标题与页尾，推荐用以下格式来交换友情链接。
-
-友链头像放在`/assets/link-img`，友链数据放在`/data/links.json`
-
-link.json格式为：
-
+可联系我的邮箱（c_man777@163.com）提供以下格式：
 ```
-[
-    {
-        "title": "小球飞鱼",
-        "website": "https://mantyke.icu/",
-        "image": "mantyke.png",
-     "description": "我们会一起遇见鲸鱼吗？"
-    },
-	{
-        "title": "友情链接2",
-        "website": "",
-        "image": "",
-     "description": ""
-    }
-]
+名称：
+简介：
+地址：
+头像：
 ```
 
+收到消息后，我会第一时间回复！
+
+若你的网站失效或未添加本友链，我会主动联系并暂时删除你的友链信息。
 
 
-> 名称：小球飞鱼  
-> 简介：我们会一起遇见鲸鱼吗？  
-> 地址：[https://mantyke.icu/](https://mantyke.icu/)  
-> 头像：[https://cdn.jsdelivr.net/gh/Mantyke/photo@master/star_min.png](https://cdn.jsdelivr.net/gh/Mantyke/photo@master/star_min.png)
 
+> 名称：青葱与志
+> 
+> 简介：向往真实、随性、善意、珍惜、同理心
+> 
+> 地址：[https://runningccode.github.io/](https://runningccode.github.io/)  
+> 
+> 头像：[https://runningccode.github.io/avater.jpg](https://runningccode.github.io/avater.jpg)
