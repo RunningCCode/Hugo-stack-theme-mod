@@ -1,10 +1,10 @@
 ---
 
-title: "{{ replace .Name "-" " " | title }}"
-slug: "{{ replace .Name "-" " " | title }}"
+title: "1024 测试文章"
+slug: "1024 测试文章"
 description:
-date: "{{ .Date }}"
-lastmod: "{{ .Date }}"
+date: "2023-10-24T09:39:42+08:00"
+lastmod: "2023-10-24T09:39:42+08:00"
 image: cover.png
 math:
 license:

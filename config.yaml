@@ -1,8 +1,8 @@
-baseurl: https://example.com
-languageCode: en-us
+baseurl: https://runningccode.github.io
+languageCode: zh-cn
 theme: stack
 paginate: 5
-title: Example Site
+title: 青葱与志
 
 # Change it to your Disqus shortname before using
 disqusShortname: stack
@@ -12,7 +12,7 @@ googleAnalytics:
 
 # Theme i18n support
 # Available values: en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk
-DefaultContentLanguage: en
+DefaultContentLanguage: zh-cn
 
 # Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
 # This will make .Summary and .WordCount behave correctly for CJK languages.
@@ -27,10 +27,10 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon:
+    favicon: \favicon.ico
 
     footer:
-        since: 2020
+        since: 2023
         customText:
 
     dateFormat:
@@ -39,11 +39,11 @@ params:
 
     sidebar:
         emoji: 🍥
-        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        subtitle: 向往真实、随性、善意、珍惜、同理心
         avatar:
             enabled: true
             local: true
-            src: img/avatar.png
+            src: img/头像.jpg
 
     article:
         math: false
@@ -55,82 +55,33 @@ params:
 
     comments:
         enabled: true
-        provider: disqus
-
-        disqusjs:
-            shortname:
-            apiUrl:
-            apiKey:
-            admin:
-            adminLabel:
-
-        utterances:
-            repo:
-            issueTerm: pathname
-            label:
-
-        remark42:
-            host:
-            site:
-            locale:
-
-        vssue:
-            platform:
-            owner:
-            repo:
-            clientId:
-            clientSecret:
-            autoCreateIssue: false
-
-        # Waline client configuration see: https://waline.js.org/en/reference/client.html
+        provider: waline
         waline:
-            serverURL:
-            lang:
-            visitor:
+            # 这里填你的vercel服务器地址。
+            # vercel自定义域名会和cloudflare会冲突导致无限301,所以干脆直接用送的域名了
+            # 注意要部署总域名，而不是最新部署的版本域名（中间有一段随机英文字符的），否则会报 401 Unauthorized
+            serverURL: https://vercel.rfyjjuc.cn/
+            lang: zh-CN
+            # 文章浏览量统计，在新版waline中已更名为pageview属性，貌似用不了了
+            # 填入false代表不启用，填入字符串的时候会作为css选择器
+            visitor: false
+            # 头像来源，在V2中已移除该属性
             avatar:
             emoji:
-                - https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo
+                - https://npm.elemecdn.com/@waline/emojis@1.1.0/bilibili
+                - https://npm.elemecdn.com/@waline/emojis@1.1.0/bmoji
+                - https://npm.elemecdn.com/@waline/emojis@1.1.0/weibo
+            # 回复时必填的内容
             requiredMeta:
                 - name
                 - email
                 - url
-            placeholder:
+            # 评论框的默认的文字
+            placeholder: 欢迎留下宝贵的评论！
+            # 自定义语言设置，参考https://waline.js.org/cookbook/customize/locale.html#locale-%E9%80%89%E9%A1%B9
             locale:
-                admin: Admin
-
-        twikoo:
-            envId:
-            region:
-            path:
-            lang:
-
-        # See https://cactus.chat/docs/reference/web-client/#configuration for description of the various options
-        cactus:
-            defaultHomeserverUrl: "https://matrix.cactus.chat:8448"
-            serverName: "cactus.chat"
-            siteName: "" # You must insert a unique identifier here matching the one you registered (See https://cactus.chat/docs/getting-started/quick-start/#register-your-site)
-
-        giscus:
-            repo:
-            repoID:
-            category:
-            categoryID:
-            mapping:
-            lightTheme:
-            darkTheme:
-            reactionsEnabled: 1
-            emitMetadata: 0
-
-        gitalk:
-            owner:
-            admin:
-            repo:
-            clientID:
-            clientSecret:
-
-        cusdis:
-            host:
-            id:
+                admin: 站长
+                sofa: 还没有人评论哦！快来抢沙发吧~
     widgets:
         enabled:
             - search
@@ -179,7 +130,7 @@ params:
 menu:
     main:
         - identifier: home
-          name: Home
+          name: 主页
           url: /
           weight: -100
           params:
@@ -190,15 +141,22 @@ menu:
     social:
         - identifier: github
           name: GitHub
-          url: https://github.com/CaiJimmy/hugo-theme-stack
+          url: https://github.com/RunningCCode
           params:
-              icon: brand-github
+              icon: github
 
-        - identifier: twitter
-          name: Twitter
-          url: https://twitter.com
+        - identifier: osChina
+          name: OSChina
+          url: https://my.oschina.net/u/4101481
           params:
-              icon: brand-twitter
+              icon: oschina
+
+        - identifier: email
+          name: Email
+          url: mailto:c_man777@163.com
+          weight: 4
+          params:
+              icon: email
 
 related:
     includeNewer: true
@@ -228,3 +186,4 @@ markup:
         lineNos: true
         lineNumbersInTable: true
         tabWidth: 4
+        style: onedark

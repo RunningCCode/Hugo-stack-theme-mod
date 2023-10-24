@@ -8,10 +8,10 @@ comments: false
 license: false
 menu: 
     main:
-        name: friends
+        name: 链接
         weight: -90
         params:
-            icon: home
+            icon: link
         
 ---
 <style>
