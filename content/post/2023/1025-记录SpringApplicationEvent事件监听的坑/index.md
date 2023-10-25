@@ -18,7 +18,7 @@ tags: ["SpringBoot"]
 
 如果在spring.factories注册一个监听器，形如:`org.springframework.context.ApplicationListener=com.zerofinance.xpay.commons.component.knife4j.Knife4jCfg4SpringStartListener`
 
-```text
+```java
 public class Knife4jCfg4SpringStartListener implements ApplicationListener<ApplicationPreparedEvent> {
 
 
@@ -64,7 +64,7 @@ RestartListener 在容器刷新时会监听 ContextRefreshedEvent 事件，然�
 
 AbstractApplicationContext类源码摘要：
 
-```text
+```java
 protected void publishEvent(Object event, @Nullable ResolvableType eventType) {
     Assert.notNull(event, "Event must not be null");
 
