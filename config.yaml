@@ -124,14 +124,10 @@ params:
         content:
             enabled: true
     xwi88Cfg:
-        summary:
-            update: true # summary 更新日期显示
-        page:
-            update: true # pages 更新日期显示
         busuanzi:
             enable: true
             site_uv: true
-            site_uv_pre: '<i class="fa fa-user">站点总访客数:   </i>' # 字符或提示语
+            site_uv_pre: '<i class="fa fa-user">站点总访客数:   </i>'
             site_uv_post: '人'
             site_pv: true
             site_pv_pre: '<i class="fa fa-eye">站点总访问量:   </i>'
