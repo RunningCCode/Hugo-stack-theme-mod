@@ -136,9 +136,6 @@ params:
             site_pv: true
             site_pv_pre: '<i class="fa fa-eye">站点总访问量:   </i>'
             site_pv_post: '次'
-            page_pv: true
-            page_pv_pre: '<i class="far fa-eye fa-fw">本文总阅读量:   </i>'
-            page_pv_post: '次'
 
 
 
