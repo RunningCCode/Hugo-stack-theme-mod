@@ -66,7 +66,7 @@ OAuth协议中定义了4种类型(但没否定其他类型的扩展机制)。
 接下来具体介绍这四种模式及应用场景。
 #### Authorization Code——授权码模式
 - 应用场景: 客户端有后台，AccessToken可以得到有效保护。
-客户端获取Authorization Grant的过程，是通过将用户重定向到授权服务器，授权服务器对资源所有者进行身份验证，
+- 客户端获取Authorization Grant的过程，是通过将用户重定向到授权服务器，授权服务器对资源所有者进行身份验证，
 然后再由授权服务器携带Authorization Code参数重定向到客户端，这里的Authorization Grant就是Authorization Code-授权码。
 然后客户端使用Authorization Code请求认证服务器，认证服务器对客户端进行身份验证，然后返回客户端AccessToken。
 这种方式避免了客户端与资源所有者共享资源所有者用于向认证服务器进行身份验证的凭证。保护了授权服务器对资源所有者进行认证的能力。
