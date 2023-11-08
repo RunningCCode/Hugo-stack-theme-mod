@@ -1,10 +1,10 @@
 ---
-
 title: "1106 授权与认证之OAuth"
 slug: "1106 授权与认证之OAuth"
 description:
 date: "2023-11-06T14:15:25+08:00"
 lastmod: "2023-11-06T14:15:25+08:00"
+image:
 math:
 license:
 hidden: false
