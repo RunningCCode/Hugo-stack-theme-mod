@@ -77,7 +77,7 @@ OAuth协议中定义了4种类型(但没否定其他类型的扩展机制)。
 但是其弊端在于,因为是直接返回AccessToken返回给客户端，省略了客户端的身份验证，AccessToken可能暴露给资源所有者
 或有权访问资源所有者的用户代理程序。
 #### Resource Owner Password Credentials——密码模式
-- 使用场景：在隐式授权的基础上，资源所有者如果能完全信任客户端
+- 应用场景：在隐式授权的基础上，资源所有者如果能完全信任客户端
 - 资源所有者直接将自己的密码凭证提供给客户端，客户端再使用这个凭证请求向授权服务器请求AccessToken或RefreshToken。
 其与传统的直接使用密码凭证向资源服务器请求资源相比，就是多了个AccessToken或RefreshToken的机制，可以让客户端不
 保存密码凭证，但其适用场景仅仅在于资源所有者和客户端的关系高度密切，存在高度信任，比如客户端就是操作系统，
@@ -94,7 +94,9 @@ OAuth协议中定义了4种类型(但没否定其他类型的扩展机制)。
 ### 参考文献
 
 [单点登录协议有哪些？CAS、OAuth、OIDC、SAML有何异同？](https://www.cloudentify.com/archives/834)
+
 [RFC 6749 - The OAuth 2.0 Authorization Framework](https://datatracker.ietf.org/doc/html/rfc6749)
+
 [OAuth2.0授权协议+4种认证模式了解](https://blog.csdn.net/weixin_45559449/article/details/129258158)
 
 ### 版权信息
