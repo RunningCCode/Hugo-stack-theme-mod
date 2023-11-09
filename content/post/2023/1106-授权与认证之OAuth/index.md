@@ -10,7 +10,7 @@ license:
 hidden: false
 draft: false
 categories: ["学习笔记"]
-tags: ["OAuth","授权"]
+tags: ["OAuth","授权","PKCE"]
 
 ---
 # 前言
