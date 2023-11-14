@@ -86,7 +86,7 @@ OAuth协议中定义了4种类型(但没否定其他类型的扩展机制)。
 - 因为客户端本身是纯前端或本地易抓包应用， 无法安全保管AccessToken或客户端凭证,所以索性省略客户端的身份验证。简化验证流程。
 - 基于重定向，所以资源所有者的用户代理通常是浏览器。
 - 客户端必须能够与资源所有者的用户代理交互,所以一般是前端页面脚本，为什么不是后端服务器，因为如果是就能使用授权码更安全一点了。
-- OAUTH2.1中已移除，就算客户端本身是纯前端无后端服务，也可以使用PKCE加强安全性，防止恶意的攻击。
+- OAUTH2.1中已移除，就算客户端本身是纯前端无后端服务，也可以使用PKCE+授权码模式加强安全性，防止恶意的攻击。
 
 #### Resource Owner Password Credentials——密码模式
 ![img_3.png](img_3.png)
@@ -158,9 +158,41 @@ OAuth 2.0的隐式授权模式是设计用于单页面应用（SPA）的，目�
 #### 授权码模式中请求AccessToken时不再包含redirect_uri参数 
 因为提出了PKCE,原有的redirect_uri参数功能被PCKE模式替代了。
 
+
+### 最佳实践
+
+
+1. 网页应用授权
+
+使用授权码模式+PKCE，任何情况下都废弃隐式授权
+
+2. 原生应用授权
+
+与单页应用程序一样，移动应用程序也无法维护客户端机密的保密性。因此，移动应用程序还必须使用不需要客户端机密的OAuth流。
+当前的最佳做法是将授权码模式与PKCE一起使用，同时启动外部浏览器，以确保本机应用程序无法修改浏览器窗口或检查内容。
+
+3. 没有浏览器或没有输入设备的设备，比如在智能电视、媒体控制台、相框、打印机或硬件视频编码器等设备
+
+使用设备授权授予模式-rfc8628：
+
+![img_10.png](img_10.png)
+
+- （A）客户端从授权服务器请求访问，并在请求中包括其客户端标识符。
+- （B）授权服务器发出设备代码和终端用户代码，并提供最终用户验证URI。
+- （C）客户端指示终端用户使用另一个设备上的用户代理，并访问提供的终端用户验证URI。客户端向用户提供终端用户代码以供输入
+，以便审查授权请求。
+- （d）授权服务器对终端用户进行身份验证（通过用户代理），并提示用户输入设备客户端提供的用户代码。
+授权服务器验证用户提供的用户代码，并提示用户接受或拒绝请求。
+- （e）在终端用户审查客户端的请求的同时（步骤D），客户端重复轮询授权服务器，以查明用户是否完成了用户授权步骤。
+客户端包括设备代码及其客户端标识符。
+- （f）授权服务器验证客户端提供的设备代码，并且如果授予客户端访问权限，则以访问令牌响应，如果拒绝访问，则以错误响应，
+或者以指示客户端应继续轮询。
+
 ### 参考文献
 
 [单点登录协议有哪些？CAS、OAuth、OIDC、SAML有何异同？](https://www.cloudentify.com/archives/834)
+
+[OAuth 2.0 — OAuth](https://oauth.net/2/)
 
 [RFC 6749 - The OAuth 2.0 Authorization Framework](https://datatracker.ietf.org/doc/html/rfc6749)
 
@@ -174,7 +206,12 @@ OAuth 2.0的隐式授权模式是设计用于单页面应用（SPA）的，目�
 
 [Proof Key for Code Exchange by OAuth Public Clients](https://datatracker.ietf.org/doc/html/rfc7636)
 
-[Final: OpenID Connect Core 1.0 incorporating errata set 1](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims)
+[RFC 8628 - OAuth 2.0 Device Authorization Grant](https://datatracker.ietf.org/doc/html/rfc8628)
+
+
+
+
+
 
 ### 版权信息
 
