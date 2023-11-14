@@ -5,7 +5,7 @@ slug: "{{ replace .Name "-" " " | title }}"
 description:
 date: "{{ .Date }}"
 lastmod: "{{ .Date }}"
-image: cover.png
+image:
 math:
 license:
 hidden: false
